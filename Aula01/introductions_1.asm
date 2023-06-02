@@ -6,5 +6,5 @@ global _start ; -- Este Label obrigatoriamente deve ter!
 _start:
        mov EAX, 0x1    ; --  SO estou terminando o programa
        mov EBX, 0x0    ; --  SO o valor de retorno e 0
-       int 0x80        ; --  
+       int 0x80        ; --  finalizando
            
