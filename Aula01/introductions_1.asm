@@ -1,11 +1,11 @@
 section .data
        msg db 'Hello World!', 0xA, 0XD ; 0xA corresponde a Quebra de Linha Line Feed.
        tamA equ $- msg            ; equ -> esta afirmando que "tam" e uma constante
-       msgA db 'Otario voce e burro', 0xA
+       msgA db 'Rebecca Rodrigues!', 0xA
        tamB equ $- msgA
-       msgB db 'Voce gosta de pessoas Frias!', 0xA
+       msgB db 'Melissa Rodrigues!', 0xA
        tamC equ $- msgB
-       msgC db 'Andre Panizza dos Santos', 0xA
+       msgC db 'Erica Cavalcanti Rodrigues', 0xA
        tamD equ $- msgC
       
 
