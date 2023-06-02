@@ -1,3 +1,5 @@
+; Course the Assembly, Registradores:
+
 section .data ; -- Normalmente colocamos todas as sections [constantes]
 section .bss ;  -- Colocamos todas as nossas variaveis, coisas que vamos modificar
 section .text ; -- começa o nosso programa!
