@@ -1,5 +1,5 @@
 section .data
-       msg db 'Hello World!', 0xA ; 0xA corresponde a Quebra de Linha Line Feed.
+       msg db 'Hello World!', 0xA, 0XD ; 0xA corresponde a Quebra de Linha Line Feed.
        tamA equ $- msg            ; equ -> esta afirmando que "tam" e uma constante
        msgA db 'Otario voce e burro', 0xA
        tamB equ $- msgA

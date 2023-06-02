@@ -2,6 +2,7 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 segment .data
 LF      equ 0xA      ; LINE FEED
+NULL    equ 0XD      ; Final da String
 SYS_CALL equ 0x80    ; Envia Informação ao SO.
 
 ; EAX:
