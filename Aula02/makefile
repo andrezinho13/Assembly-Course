@@ -1,6 +1,6 @@
-NOME = entrada
-all:$(NOME).o
-	ld -s -o $(NOME) $(NOME).o
+nome = entrada
+all:$(nome).o
+	ld -s -o $(nome) $(nome).o
 	rm -rf *.o
   %.o: %.asm
 	nasm -f elf64 $<

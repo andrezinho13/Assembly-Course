@@ -18,6 +18,13 @@ section .data
     msg db 'Ola Mundo', LF
     tam equ $- msg
 
+section .bss
+    ; Sigla: resb  Tipo: Byte -  Significado: Variavel de 8  bits
+    ; Sigla: resw  Tipo: word -  Significado: Variavel de 16 bits
+    ; Sigla: resd  Tipo: double -Significado: variavel de 32 bits
+    ; Sigla: resq  Tipo: quad  - Significado: Variavel de 64 bits
+    ; Sigla: resqd Tipo: DoubleQuad - Significado: Variavel de 128 bits
+    
 section .text
 
 

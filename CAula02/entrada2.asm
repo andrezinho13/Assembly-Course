@@ -34,6 +34,7 @@ mov eax, SYS_WRITE
 mov ebx, STD_OUT
 mov ecx, msg
 mov edx, tam
+int SYS_CALL
 ; Note que a movimentação de entrada e quase a mesma coisa, copiaremos os blocos:
 
 mov eax, SYS_READ
