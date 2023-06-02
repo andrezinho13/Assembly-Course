@@ -1,12 +1,21 @@
-; Course the Assembly, Registradores:
+section .data
+       msg db 'Hello World', 0xA
+       tam equ $- msg
 
-section .data ; -- Normalmente colocamos todas as sections [constantes]
-section .bss ;  -- Colocamos todas as nossas variaveis, coisas que vamos modificar
-section .text ; -- começa o nosso programa!
-global _start ; -- Este Label obrigatoriamente deve ter!
+section .text
+
+global _start
 
 _start:
-       mov EAX, 0x1    ; --  SO estou terminando o programa
-       mov EBX, 0x0    ; --  SO o valor de retorno e 0
-       int 0x80        ; --  finalizando
-           
+  mov eax, 0x4
+  mov ebx, 0x1
+  mov ecx, msg
+  mov edx, tam
+  int 0x80
+
+
+saida:
+  mov eax, 0x1
+  mov ebx, 0x0
+  int 0x80
+;---------------------------------------------------------------------------------------------------
