@@ -1,19 +1,26 @@
 section .data
-       msg db 'Hello World', 0xA ; 0xA corresponde a Quebra de Linha Line Feed.
-       tam equ $- msg            ; equ -> esta afirmando que "tam" e uma constante
+       msg db 'Hello World!', 0xA ; 0xA corresponde a Quebra de Linha Line Feed.
+       tamA equ $- msg            ; equ -> esta afirmando que "tam" e uma constante
+       msgA db 'Otario voce e burro', 0xA
+       tamB equ $- msgA
+       msgB db 'Voce gosta de pessoas Frias!', 0xA
+       tamC equ $- msgB
+       msgC db 'Andre Panizza dos Santos', 0xA
+       tamD equ $- msgC
+      
 
 section .text
 
 global _start
 
 _start:
-  mov eax, 0x4         ; registradores EAX: 0x3: para operações de Leitura, 0x4 para operações de escrita 
-  mov ebx, 0x1
-  mov ecx, msg
-  mov edx, tam
+  mov eax, 0x4    ; SYS_WRITE registradores EAX: 0x3: para operações de Leitura, 0x4 para operações de escrita 
+  mov ebx, 0x1    ; SYSTEM.OUT
+  mov ecx, msgC   ; contém p conteudo em caractere que vamos mostrar no caso const: msgA
+  mov edx, tamD ; Quantidade de caracteres que serão mostrada - msgA
   int 0x80
 
-
+; Posso colocar em tamB um valor que corresponde a 5 em Hexadecimal, no caso 0x5
 saida:
   mov eax, 0x1 ; SO estou terminando o programa
   mov ebx, 0x0 ; SO o valor de retorno e 0
@@ -23,7 +30,7 @@ saida:
 ; section .bss:  colocamos todas as nossas variaveis                                                   |
 ; section. text: junto com a .text global _start -> teremos um ponteiro chamado _start:                |
 ; _start:      : Ponto de Entrada, para iniciar neste ponto.                                           |
-;--------------------------------------------------------------------------------------------------    |
+;------------------------------------------------------------------------------------------------------|
 ; Usaremos a mov: que significa movimentação de valores                                                |
 ; vamos mover para o registrador EAX, 1 vou mandar pra dentro do registrador.                          |
 ; siginifica: destino, origem, EAX = 1                                                                 |
@@ -36,6 +43,5 @@ saida:
 ; 1° Eu preciso Compilar: nasm -f elf64 introductions_1.asm                                            |
 ; 2° Ele ira gerar um arquivo introductions_1.o                                                        |
 ; 3° ld -s -o introductions introductions_1.o - Linkeditarndo o arquivo: introductions_1.o             |                                                                                                 |
-;                                                                                                      |  
-;                                                                                                      |
-;  
+; 4° Gera um arquivo: ./introductions e exibe a mensagem na tela.                                      |                                                               |  
+;------------------------------------------------------------------------------------------------------|  
