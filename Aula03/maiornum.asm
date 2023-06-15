@@ -66,11 +66,12 @@ _start:
     ; Ele esta pegando um registrador, colocando outro na fila, e olhando para os dois
     
     
-    cmp EAX,EBX ; vamos dizer agora a forma como vamos comparar EAX > EBX
+    cmp EAX,EBX ; vamos dizer agora a forma como vamos comparar EAX > EBX 
 
     jge maior ;EAX >= EBX
-    mov ECX, msg2
-    mov EDX, tam2
+    mov ECX, msg2 
+    mov EDX, tam2 
+    
     ; Podemos chamar de Salto conficional:
     ; je: = jg: > jge: >= jl: < jge: <= jne: !=
     jmp final
